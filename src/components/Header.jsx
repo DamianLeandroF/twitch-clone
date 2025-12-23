@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { Search, Bell, User, LogOut, Tv } from "lucide-react";
+import { Search, Bell, User, LogOut, Twitch } from "lucide-react";
 
 const CLIENT_ID = "zc52bx407yd1b07r8pilibmtq76n19";
 const REDIRECT_URI = `${window.location.origin}/auth/twitch`;
@@ -35,7 +35,7 @@ const Header = ({ onSearchChange, currentSearch }) => {
       {/* SECCIÓN IZQUIERDA: LOGO */}
       <Link to="/" className="shrink-0">
         <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
-          <Tv className="w-7 h-7" />
+          <Twitch className="w-7 h-7" />
           <span className="text-2xl font-extrabold tracking-tighter">
             Stream+
           </span>
