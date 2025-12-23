@@ -238,7 +238,7 @@ Actualiza `server.js` para permitir tu dominio de frontend:
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://tu-app.vercel.app", // Agrega tu dominio de Vercel
+    "https://twitch-clone-lake.vercel.app/", // Agrega tu dominio de Vercel
   ],
   credentials: true,
 };

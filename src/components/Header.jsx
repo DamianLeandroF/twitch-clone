@@ -4,9 +4,11 @@ import { useAuth } from "../hooks/useAuth";
 import { Search, Bell, User, LogOut, Tv } from "lucide-react";
 
 const CLIENT_ID = "zc52bx407yd1b07r8pilibmtq76n19";
-const REDIRECT_URI = "http://localhost:5173/auth/twitch";
+const REDIRECT_URI = `${window.location.origin}/auth/twitch`;
 const SCOPES = "user:read:email openid";
-const TWITCH_AUTH_URL = `https://id.twitch.tv/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${SCOPES}`;
+const TWITCH_AUTH_URL = `https://id.twitch.tv/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+  REDIRECT_URI
+)}&response_type=code&scope=${SCOPES}`;
 
 const Header = ({ onSearchChange, currentSearch }) => {
   const { isLoggedIn, user, logout } = useAuth();

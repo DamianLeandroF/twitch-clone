@@ -22,16 +22,15 @@ const AuthHandler = () => {
       // Enviar el código de autorización al backend para intercambio
       const exchangeCode = async () => {
         try {
-          const response = await fetch(
-            "http://localhost:3001/auth/twitch/callback",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ code }),
-            }
-          );
+          const apiUrl =
+            import.meta.env.VITE_API_URL || "http://localhost:3001";
+          const response = await fetch(`${apiUrl}/auth/twitch/callback`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ code }),
+          });
 
           const data = await response.json();
 
