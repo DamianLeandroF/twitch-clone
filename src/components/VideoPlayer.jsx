@@ -1,8 +1,9 @@
 const VideoPlayer = ({ streamData }) => {
   const channelName = streamData.canal;
+  const currentHostname = window.location.hostname;
 
   // URL base del embed de Twitch
-  const embedUrl = `https://player.twitch.tv/?channel=${channelName}&parent=localhost&muted=false&autoplay=true`;
+  const embedUrl = `https://player.twitch.tv/?channel=${channelName}&parent=${currentHostname}&muted=false&autoplay=true`;
 
   return (
     <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
